@@ -43,17 +43,17 @@
 
 ## Paso a paso para ejecutar la aplicación :checkered_flag:
 
-:trofeo: Instalar NodeJS
+:trophy: Instalar NodeJS
 
-:trofeo: Ejecutar en CMD / SHELL / TERMINAL -> npx create-react-app nombre_proyecto
+:trophy: Ejecutar en CMD / SHELL / TERMINAL -> npx create-react-app nombre_proyecto
 
-:trofeo: Instalar extensión en ES7 o ES6 fragmento vscode
+:trophy: Instalar extensión en ES7 o ES6 fragmento vscode
 
 :trophy: el código 'npm start ejecuta los otros scripts del proyecto en package.json
 
-:trofeo: Instalar ejes con npm i axios
+:trophy: Instalar ejes con npm i axios
 
-:trofeo: Instalar eslint con npm install eslint --save-dev
+:trophy: Instalar eslint con npm install eslint --save-dev
 
 
 ![welcome-to-vue](https://user-images.githubusercontent.com/54008916/87338632-d9f93c00-c51b-11ea-8dee-e2299844a326.png)
