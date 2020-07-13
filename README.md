@@ -26,34 +26,34 @@
 :trophy:Instalar eslint com  npm install eslint --save-dev
 
 
-## Step by Step to run application: checkered_flag:
+## Step by Step to run application :checkered_flag:
 
-: trophy: Install NodeJS
+:trophy: Install NodeJS
 
-: trophy: Run in CMD / SHELL / TERMINAL -> npx create-react-app project_name
+:trophy: Run in CMD / SHELL / TERMINAL -> npx create-react-app project_name
 
-: trophy: Install extension on ES7 or ES6 snippet vscode
+:trophy: Install extension on ES7 or ES6 snippet vscode
 
-: trophy: Code 'npm start runs the project' other scripts in package.json
+:trophy: Code 'npm start runs the project' other scripts in package.json
 
-: trophy: Install axles with npm i axios
+:trophy: Install axles with npm i axios
 
-: trophy: Install eslint with npm install eslint --save-dev
+:trophy: Install eslint with npm install eslint --save-dev
 
 
-## Paso a paso para ejecutar la aplicación: checkered_flag:
+## Paso a paso para ejecutar la aplicación :checkered_flag:
 
-: trofeo: Instalar NodeJS
+:trofeo: Instalar NodeJS
 
-: trofeo: Ejecutar en CMD / SHELL / TERMINAL -> npx create-react-app nombre_proyecto
+:trofeo: Ejecutar en CMD / SHELL / TERMINAL -> npx create-react-app nombre_proyecto
 
-: trofeo: Instalar extensión en ES7 o ES6 fragmento vscode
+:trofeo: Instalar extensión en ES7 o ES6 fragmento vscode
 
-: trophy: el código 'npm start ejecuta los otros scripts del proyecto en package.json
+:trophy: el código 'npm start ejecuta los otros scripts del proyecto en package.json
 
-: trofeo: Instalar ejes con npm i axios
+:trofeo: Instalar ejes con npm i axios
 
-: trofeo: Instalar eslint con npm install eslint --save-dev
+:trofeo: Instalar eslint con npm install eslint --save-dev
 
 
 ![welcome-to-vue](https://user-images.githubusercontent.com/54008916/87338632-d9f93c00-c51b-11ea-8dee-e2299844a326.png)
