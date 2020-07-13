@@ -15,45 +15,45 @@
 
 :trophy: Instalar NodeJS
 
-:trophy: Rodar no CMD/SHELL/TERMINAL --> npx create-react-app nome_do_projeto
+:trophy: Rodar no CMD/SHELL/TERMINAL --> 'npx create-react-app nome_do_projeto'
 
 :trophy: Instalar extensão no vscode de snippet ES7 ou ES6
 
-:trophy: Código 'npm start roda o projeto' outros scripts no package.json
+:trophy: Código 'npm start' roda o projeto' outros scripts no package.json
 
-:trophy: Instalar axios com npm i axios
+:trophy: Instalar axios com 'npm i axios'
 
-:trophy:Instalar eslint com  npm install eslint --save-dev
+:trophy:Instalar eslint com  'npm install eslint --save-dev'
 
 
 ## Step by Step to run application :checkered_flag:
 
 :trophy: Install NodeJS
 
-:trophy: Run in CMD / SHELL / TERMINAL -> npx create-react-app project_name
+:trophy: Run in CMD / SHELL / TERMINAL -> 'npx create-react-app project_name'
 
 :trophy: Install extension on ES7 or ES6 snippet vscode
 
-:trophy: Code 'npm start runs the project' other scripts in package.json
+:trophy: Code 'npm start' runs the project' other scripts in package.json
 
-:trophy: Install axles with npm i axios
+:trophy: Install axles with 'npm i axios'
 
-:trophy: Install eslint with npm install eslint --save-dev
+:trophy: Install eslint with 'npm install eslint --save-dev'
 
 
 ## Paso a paso para ejecutar la aplicación :checkered_flag:
 
 :trophy: Instalar NodeJS
 
-:trophy: Ejecutar en CMD / SHELL / TERMINAL -> npx create-react-app nombre_proyecto
+:trophy: Ejecutar en CMD / SHELL / TERMINAL -> 'npx create-react-app nombre_proyecto'
 
 :trophy: Instalar extensión en ES7 o ES6 fragmento vscode
 
-:trophy: el código 'npm start ejecuta los otros scripts del proyecto en package.json
+:trophy: el código 'npm start' ejecuta los otros scripts del proyecto en package.json
 
-:trophy: Instalar ejes con npm i axios
+:trophy: Instalar ejes con 'npm i axios'
 
-:trophy: Instalar eslint con npm install eslint --save-dev
+:trophy: Instalar eslint con 'npm install eslint --save-dev'
 
 
 ![welcome-to-vue](https://user-images.githubusercontent.com/54008916/87338632-d9f93c00-c51b-11ea-8dee-e2299844a326.png)
