@@ -1,5 +1,4 @@
 name: 'Labeler'
-
 on:
   release:
     types: [released]
