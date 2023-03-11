@@ -10,7 +10,7 @@ on:
       repo-token:
         description: 'The GitHub token used to manage labels'
         required: false
-        GITHUB_TOKEN: ${{ GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{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}}
       configuration-path:
         description: 'The path for the label configurations'
         default: '.github/labeler.yml'
