@@ -7,12 +7,12 @@ on:
         default: 'warning'
       tags:
         description: 'Test scenario tags'  
+
+  
 jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}"
-
-
+        echo "Tags: ${{ github.event.inputs.tags }}" 
