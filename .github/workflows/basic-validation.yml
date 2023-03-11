@@ -1,10 +1,23 @@
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
+
+ build:
+
+  runs-on: ubuntu-latest
+  runs-on: windows-latest
+  runs-on: macos-latest
+
+
   call-basic-validation:
     name: Basic validation
     uses: actions/reusable-workflows/.github/workflows/basic-validation.yml@main
+
+  steps:
+    - run: yarn install --frozen-lockfile
+    - run: yarn lint
+    - run: yarn test:ci  
