@@ -6,26 +6,13 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Test scenario tags'
-      repo-token:
-        description: 'The GitHub token used to manage labels'
-        required: false
-        GITHUB_TOKEN: ${{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}}
-      configuration-path:
-        description: 'The path for the label configurations'
-        default: '.github/labeler.yml'
-        required: false
-      sync-labels:
-        description: 'Whether or not to remove labels when matching files are reverted'
-        default: false
-        required: false  
+        description: 'Test scenario tags'  
+
+  
 jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
-        echo "Tags: ${{ github.event.inputs.tags }}"
-
-
-  
+        echo "Tags: ${{ github.event.inputs.tags }}" 
