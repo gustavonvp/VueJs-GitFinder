@@ -95,5 +95,9 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+
+  "overrides": {
+    "trim-newlines": "^1.0.0"
+  }
 }
