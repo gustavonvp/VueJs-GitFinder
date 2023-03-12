@@ -6,7 +6,7 @@ module.exports = {
   src_folders: ['test/e2e/specs'],
   output_folder: 'test/e2e/reports',
   custom_assertions_path: ['test/e2e/custom-assertions'],
-
+  
   selenium: {
     start_process: true,
     server_path: require('selenium-server-standalone-jar').path,
@@ -26,7 +26,7 @@ module.exports = {
       globals: {
         devServerURL: 'http://127.0.0.1:' + (process.env.PORT || config.dev.port)
       },
-      start_process: true,
+      
     },
 
     chrome: {
