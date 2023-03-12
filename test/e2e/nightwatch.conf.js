@@ -8,7 +8,7 @@ module.exports = {
   custom_assertions_path: ['test/e2e/custom-assertions'],
   
   selenium: {
-    start_process: false,
+    start_process: true,
     server_path: require('selenium-server-standalone-jar').path,
     host: 'localhost',
     port: 4445,
@@ -23,6 +23,10 @@ module.exports = {
       globals: {
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
       },
+      desiredCapabilities: {
+        browserName: "firefox",
+        marionette: true
+        }
       
     },
 
