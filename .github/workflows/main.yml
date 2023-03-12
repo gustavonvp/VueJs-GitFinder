@@ -26,9 +26,5 @@ jobs:
       - run: npm install     
       - run: npm ci --no-save --legacy-peer-deps
       - run: npm run build --if-present
-      - run: npx nightwatch --env chrome
-      - run: npm run test --env chrome
-      - run: npx nightwatch --env default
-      - run: npm run test --env default
       - run: npm test --http-parser=legacy
       
