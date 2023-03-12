@@ -8,8 +8,6 @@ on:
 
 jobs:
   build:
-  test_example:
-    
     runs-on: ubuntu-latest
   
     strategy:
