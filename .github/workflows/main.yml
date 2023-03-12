@@ -22,7 +22,7 @@ jobs:
             ${{ runner.os }}-node-
       - run: node -v
       - run: npm install --legacy-peer-deps
-      - run: npm ci
+      - run: npm ci --no-package-lock
 
       # only makes sense to check code format on 1 OS
       - name: Linting 🧹
