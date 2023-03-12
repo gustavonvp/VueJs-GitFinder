@@ -32,8 +32,8 @@ module.exports = {
         browserName: 'chrome',
         javascriptEnabled: true,
         acceptSslCerts: true,
-        Option: {
-          cli_args: ['--disable-gpu', '--no-sandbox', '--disable-extensions', '--disable-dev-shm-usage']
+        chromeOptions: {
+          args: ['--no-sandbox']
         }
       }
     },
