@@ -110,7 +110,7 @@
 
     "html-webpack-plugin": "^5.5.0",
 
-    "inject-loader": "^2.0.1",
+    "inject-loader": "^4.0.1",
 
     "karma": "^6.4.1",
 
@@ -128,7 +128,7 @@
 
     "karma-spec-reporter": "0.0.31",
 
-    "karma-webpack": "^2.0.2",
+    "karma-webpack": "^5.0.0-alpha.3.0",
 
     "mocha": "^10.2.0",
 
