@@ -9,7 +9,7 @@ module.exports = {
 
   selenium: {
     start_process: true,
-    server_path: require('selenium-server').path,
+    server_path: require('selenium-server-standalone-jar').path,
     host: '127.0.0.1',
     port: 4445,
     cli_args: {
@@ -19,11 +19,12 @@ module.exports = {
 
   test_settings: {
     default: {
+      launch_url : "http://www.google.com",
       selenium_port: 4445,
-      selenium_host: 'localhost',
-      silent: true,
+      selenium_host: '127.0.0.1',
+      silent: false,
       globals: {
-        devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
+        devServerURL: 'http://127.0.0.1:' + (process.env.PORT || config.dev.port)
       },
       start_process: true,
     },
