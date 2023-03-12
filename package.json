@@ -120,7 +120,7 @@
 
     "html-webpack-plugin": "^5.5.0",
 
-    "inject-loader": "^2.0.1",
+    "inject-loader": "^4.0.1",
 
     "karma": "^6.4.1",
 
