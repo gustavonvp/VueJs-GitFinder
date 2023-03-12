@@ -1,7 +1,20 @@
 require('babel-register')
 var config = require('../../config')
 
+
 // http://nightwatchjs.org/gettingstarted#settings-file
+
+const {Builder} = require('selenium-webdriver');
+require("chromedriver");
+
+(async function helloSelenium() {
+  let driver = await new Builder().forBrowser('chrome').build();
+
+  await driver.get('https://selenium.dev');
+
+  await driver.quit();
+})();
+
 module.exports = {
   src_folders: ['test/e2e/specs'],
   output_folder: 'test/e2e/reports',
