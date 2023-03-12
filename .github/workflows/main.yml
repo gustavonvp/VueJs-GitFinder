@@ -19,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: rm package-lock.json 
+      - run: rm package.json 
       - run: rm -rf node_modules
       - run: npm install     
       - run: npm ci --no-save --legacy-peer-deps
