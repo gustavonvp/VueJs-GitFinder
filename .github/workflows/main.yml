@@ -13,22 +13,10 @@ jobs:
     runs-on: ubuntu-latest
   
     strategy:
-     
-     fail-fast: false
      matrix:
-      os: [ ubuntu-latest, windows-latest, macos-latest ]
+      node-version: [10.x, 12.x, 14.x, 15.x]
 
     steps:
-      - name: Checkout source code
-      uses: actions/checkout@v1
-      - name: Start Xvfb
-        if: matrix.os == 'ubuntu-latest'
-        run: Xvfb :99 &
-      - name: Set up Java
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'temurin'
-          java-version: 8
       - name: Install Chrome
         uses: browser-actions/setup-chrome@latest
       - name: Install Edge
