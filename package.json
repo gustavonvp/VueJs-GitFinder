@@ -96,7 +96,7 @@
 
     "cross-spawn": "^5.0.1",
 
-    "css-loader": "^6.7.3",
+    "css-loader": "^1.0.0",
 
     "eslint": "^8.36.0",
 
