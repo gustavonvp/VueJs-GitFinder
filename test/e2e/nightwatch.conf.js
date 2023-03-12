@@ -13,6 +13,9 @@ module.exports = {
     server_path: require('selenium-server-standalone-jar').path,
     host: 'localhost',
     port: 4445,
+    cli_args: {
+      'webdriver.chrome.driver': ""
+    }
   },
 
   test_settings: {
@@ -25,8 +28,9 @@ module.exports = {
         devServerURL: 'http://localhost:' + (process.env.PORT || config.dev.port)
       },
       desiredCapabilities: {
-        browserName: "firefox",
-        marionette: true
+        browserName: "chrome",
+        javascriptEnabled: true,
+        acceptSslCerts: true
         }
       
     },
