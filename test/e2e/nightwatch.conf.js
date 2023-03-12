@@ -13,7 +13,7 @@ module.exports = {
     host: '127.0.0.1',
     port: 4444,
     cli_args: {
-      'webdriver.chrome.driver': require('~/home/runner/work/VueJs-GitFinder/VueJs-GitFinder').path
+      'webdriver.chrome.driver': require('chromedriver').path
     }
   },
 
