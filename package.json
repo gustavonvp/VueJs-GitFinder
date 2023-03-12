@@ -12,6 +12,8 @@
 
   "scripts": {
 
+    "server": "karma start my.conf.js --log-level debug --single-run",
+
     "format": "f -w",
 
     "format:check": "f",
@@ -37,6 +39,14 @@
     "@magic/format": "^0.0.51",
 
     "axios": "^1.3.4",
+
+    "karma-chrome-launcher": "^3.1.1",
+
+    "karma-firefox-launcher": "^2.1.2",
+
+    "karma-ie-launcher": "^1.0.0",
+
+    "karma-jasmine": "^5.1.0",
 
     "vue": "^2.5.2",
 
@@ -110,7 +120,7 @@
 
     "html-webpack-plugin": "^5.5.0",
 
-    "inject-loader": "^4.0.1",
+    "inject-loader": "^2.0.1",
 
     "karma": "^6.4.1",
 
