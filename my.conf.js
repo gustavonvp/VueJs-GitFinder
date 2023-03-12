@@ -40,7 +40,7 @@ module.exports = function(config) {
     // web server port
     port: 80,
 
-    listenAddress: '110.0.5481.177',
+    listenAddress: 'localhost',
 
     // enable / disable colors in the output (reporters and logs)
     colors: true,
