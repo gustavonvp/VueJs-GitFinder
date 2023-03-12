@@ -7,37 +7,31 @@ on:
     branches: [ test_inputs ]
 
 jobs:
- test_examples:
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
-    runs-on: ${{ matrix.os }}
-    steps:
-    - name: Checkout GitHub repo
-      uses: actions/checkout@v3
-    - name: Start Xvfb
-      if: matrix.os == 'ubuntu-latest'
-      run: Xvfb :99 &
-    - name: Set up Java
-      uses: actions/setup-java@v2
-      with:
-        distribution: 'temurin'
-        java-version: 8
-    - name: Install Chrome
-      uses: browser-actions/setup-chrome@latest
-    - name: Install Edge
-      uses: browser-actions/setup-edge@latest
 
   build:
 
     runs-on: ubuntu-latest
-
+    
     strategy:
+
       matrix:
         node-version: [10.x, 12.x, 14.x, 15.x]
-
     steps:
+      - name: Checkout GitHub repo
+        uses: actions/checkout@v3
+      - name: Start Xvfb
+        if: matrix.os == 'ubuntu-latest'
+        run: Xvfb :99 &
+      - name: Set up Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: 8
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
+      - name: Install Edge
+        uses: browser-actions/setup-edge@latest
+      - name: Action Checkout
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
@@ -50,3 +44,8 @@ jobs:
       - run: npm run build --if-present
       - run: npm test --http-parser=legacy
       
+
+
+
+
+    
