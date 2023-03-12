@@ -5,14 +5,13 @@ on:
     branches: [ test_inputs ]
   pull_request:
     branches: [ test_inputs ]
-    
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  test_example:
     strategy:
      fail-fast: false
-      matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
+     matrix:
+      os: [ ubuntu-latest, windows-latest, macos-latest ]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Checkout GitHub repo
