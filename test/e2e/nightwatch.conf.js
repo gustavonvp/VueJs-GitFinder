@@ -12,15 +12,11 @@ module.exports = {
     server_path: require('selenium-server-standalone-jar').path,
     host: 'localhost',
     port: 4445,
-    cli_args: {
-      'webdriver.chrome.driver': require('chromedriver').path
-    }
   },
 
   test_settings: {
     start_process: true,
     default: {
-      launch_url : "http://www.google.com",
       selenium_port: 4445,
       selenium_host: 'localhost',
       silent: false,
@@ -30,14 +26,7 @@ module.exports = {
       
     },
 
-    chrome: {
-      start_process: true,
-      desiredCapabilities: {
-        browserName: 'chrome',
-        javascriptEnabled: true,
-        acceptSslCerts: true,
-      }
-    },
+  
 
     firefox: {
       start_process: true,
