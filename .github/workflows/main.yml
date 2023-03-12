@@ -26,9 +26,9 @@ jobs:
       - run: npm install     
       - run: npm ci --no-save --legacy-peer-deps
       - run: npm run build --if-present
-      - run: nightwatch -- --group testSuite --env nameEnv
+      - run: npx nightwatch -- --group testSuite --env nameEnv
       - run: npm run test -- --group testSuite --env nameEnv
-      - run: nightwatch -- --test testsFile/testSuite --env default
+      - run: npx nightwatch -- --test testsFile/testSuite --env default
       - run: npm run test -- --test testsFile/testSuite --env default
       - run: npm test --http-parser=legacy
       
