@@ -6,12 +6,12 @@ on:
     - cron: '40 22 * * *'
   pull_request:
     branches:
-      - trunk
+      - test_inputs
     paths:
       - 'vuejs-gitfinder/src/**'
   push:
     branches:
-      - trunk
+      - test_inputs
     paths:
       - 'vuejs-gitfinder/src/**'
 
