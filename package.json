@@ -74,7 +74,7 @@
 
     "chalk": "^2.0.1",
 
-    "chromedriver": "^90.0.0",
+    "chromedriver": "^111.0.0",
 
     "copy-webpack-plugin": "^4.0.1",
 

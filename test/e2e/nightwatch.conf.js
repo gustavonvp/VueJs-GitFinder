@@ -14,7 +14,7 @@ module.exports = {
     host: 'localhost',
     port: 4445,
     cli_args: {
-      'webdriver.chrome.driver': ""
+      'webdriver.chrome.driver': require('chromedriver').path
     }
   },
 
