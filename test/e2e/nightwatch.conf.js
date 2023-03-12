@@ -31,8 +31,6 @@ module.exports = {
       
     },
 
-  
-
     firefox: {
       start_process: true,
       desiredCapabilities: {
@@ -40,6 +38,15 @@ module.exports = {
         javascriptEnabled: true,
         acceptSslCerts: true
       }
-    }
+    },
+
+    chrome: {
+      start_process: true,
+      desiredCapabilities: {
+        browserName: 'chrome',
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+      }
+    },
   }
 }
