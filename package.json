@@ -17,6 +17,10 @@
     "format": "f -w",
 
     "format:check": "f",
+    
+    "clean": "rm -rf node_modules", 
+
+    "reinstall": "npm run clean && npm install", 
 
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
 
