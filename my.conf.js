@@ -38,7 +38,7 @@ module.exports = function(config) {
 
 
     // web server port
-    port: 4445,
+    port: 80,
 
     listenAddress: 'localhost',
 
@@ -57,7 +57,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
-    browsers: ['Chrome', 'ChromeHeadless', 'Firefox', 'IE'],
+    browsers: ['Chrome', 'ChromeHeadless'],
 
 
     // Continuous Integration mode
