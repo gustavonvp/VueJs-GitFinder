@@ -18,6 +18,7 @@ module.exports = {
   },
 
   test_settings: {
+    start_process: false,
     default: {
       launch_url : "http://www.google.com",
       selenium_port: 4445,
@@ -30,6 +31,7 @@ module.exports = {
     },
 
     chrome: {
+      start_process: false,
       desiredCapabilities: {
         browserName: 'chrome',
         javascriptEnabled: true,
@@ -38,6 +40,7 @@ module.exports = {
     },
 
     firefox: {
+      start_process: false,
       desiredCapabilities: {
         browserName: 'firefox',
         javascriptEnabled: true,
