@@ -28,9 +28,7 @@
       "enabled" : true,
       "path" : ""
   },
-  "username" : "haritagr16",
-  "access_key" : "123456789",
-
+ 
   "skip_testcases_on_fail": false,
   
   "desiredCapabilities": {
