@@ -20,10 +20,10 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: npm run clean
+      - run: npm clean
       - run: npm ci --force
       - run: npm run reinstall
-  
+      
       # only makes sense to check code format on 1 OS
       - name: Linting 🧹
         if: matrix.os == 'ubuntu-20.04'
