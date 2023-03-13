@@ -17,6 +17,8 @@
     "format": "f -w",
 
     "format:check": "f",
+    
+    "clean": "rm -rf node_modules", 
 
     "reinstall": "npm run clean && npm install", 
 
