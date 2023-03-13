@@ -7,6 +7,7 @@ module.exports = {
   src_folders: ['test/e2e/specs'],
   output_folder: 'test/e2e/reports',
   custom_assertions_path: ['test/e2e/custom-assertions'],
+  browsers: ['PhantomJS', 'PhantomJS_custom'],
   
   selenium: {
     start_process: true,
