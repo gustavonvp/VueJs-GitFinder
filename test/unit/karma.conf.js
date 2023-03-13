@@ -14,9 +14,9 @@ module.exports = function karmaConfig (config) {
     // 2. add it to the `browsers` array below.
     browsers: ['ChromeHeadless', 'Firefox'],
     frameworks: ['mocha'],
-    reporters: ['spec', 'coverage'],
+   // reporters: ['spec', 'coverage'],
     files: ['./index.js'],
-    plugins: [ 'karma-webpack',
+    plugins: [ 'karma-webpack', 
     'karma-mocha','karma-chai-as-promised', 'karma-sourcemap-loader'],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
