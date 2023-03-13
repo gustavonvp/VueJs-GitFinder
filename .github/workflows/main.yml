@@ -21,7 +21,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm run clean
-      - run: npm install  && ls | grep package-lock
+      - run: npm install --legacy-peer-deps  && ls | grep package-lock
       - run: npm run reinstall --force --legacy-peer-deps
       - run: npm-shrinkwrap.json
       - run: npm ci --install-strategy=nested --force
