@@ -17,9 +17,9 @@ module.exports = function karmaConfig (config) {
    // reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     plugins: [ 'karma-chrome-launcher', 'karma-firefox-launcher'],
-    preprocessors: {
-      './index.js': ['webpack', 'sourcemap']
-    },
+    // preprocessors: {
+    //   './index.js': ['webpack', 'sourcemap']
+    // },
     webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
