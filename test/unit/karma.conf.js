@@ -17,7 +17,7 @@ module.exports = function karmaConfig (config) {
     // 2. add it to the `browsers` array below.
     browsers: ['Chrome', 'Firefox'],
     customLaunchers: {
-      base: 'Chrome',
+      base: 'ChromeHeadless',
       flags: ['--no-sandbox']
     },
     plugins: [
