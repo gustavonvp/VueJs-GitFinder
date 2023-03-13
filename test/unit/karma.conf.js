@@ -30,7 +30,7 @@ module.exports = function karmaConfig (config) {
       ]
     },
     //reporters: ['spec', 'coverage'],
-    reporters: ['progress', 'kjhtml'],
+    reporters: ['progress'],
     files: ['./index.js'],
     // preprocessors: {
     //   './index.js': ['webpack', 'sourcemap']
