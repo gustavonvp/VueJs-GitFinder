@@ -18,7 +18,7 @@
 
     "format:check": "f",
 
-    "clean": "rm -rf node_modules && rm -rf package-lock.json && rm -rf /usr/local/bin/PahtomJs", 
+    "clean": "rm -rf node_modules && rm -rf package-lock.json && rm -rf /usr/local/bin/phantomjs", 
 
     "reinstall": "npm run clean && npm install", 
 
