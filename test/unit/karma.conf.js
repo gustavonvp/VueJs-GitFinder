@@ -12,16 +12,40 @@ module.exports = function karmaConfig (config) {
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
-    browsers: ['ChromeHeadless', 'Firefox'],
-    frameworks: ['mocha'],
-   // reporters: ['spec', 'coverage'],
+    //browsers: ['ChromeHeadless', 'Firefox'],
+    frameworks: ['jasmine'],
+    plugins: [
+      require('karma-jasmine'),
+      require('karma-chrome-launcher'),
+    ],
+    client: {
+      clearContext: false // leave Jasmine Spec Runner output visible in browser
+    },
+    reporters: ['spec', 'coverage'],
     files: ['./index.js'],
-    plugins: [ 'karma-chrome-launcher', 'karma-firefox-launcher'],
     // preprocessors: {
     //   './index.js': ['webpack', 'sourcemap']
     // },
-    webpack: webpackConfig,
-    webpackMiddleware: {
+    port: 9876,
+    colors: true,
+    logLevel: config.LOG_INFO,
+    autoWatch: true,
+    browsers: ['ChromeHeadlessNoSandbox'],
+    customLaunchers: {
+        ChromeHeadlessNoSandbox: {
+            base: 'ChromeHeadless',
+            flags: [
+                "--no-sandbox",
+                 // required to run without privileges in Docker
+                "--disable-web-security",
+                "--disable-gpu",
+                "--remote-debugging-port=9222"
+            ]
+        },
+        singleRun: false,
+        restartOnFileChange: true,
+        webpack: webpackConfig,
+        webpackMiddleware: {
       noInfo: true
     },
     coverageReporter: {
