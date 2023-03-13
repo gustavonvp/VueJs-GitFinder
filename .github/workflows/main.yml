@@ -21,8 +21,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - run: npm run clean
+      - run: npm install  && ls | grep package-lock
       - run: npm run reinstall --force --legacy-peer-deps
-      - run: npm ci --force
+      - run: npm-shrinkwrap.json
+      - run: npm ci --install-strategy=nested --force
       
       # only makes sense to check code format on 1 OS
       - name: Linting 🧹
