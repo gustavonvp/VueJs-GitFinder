@@ -16,8 +16,7 @@ module.exports = function karmaConfig (config) {
     frameworks: ['mocha'],
    // reporters: ['spec', 'coverage'],
     files: ['./index.js'],
-    plugins: [ 'karma-webpack', 
-    'karma-mocha','karma-chai-as-promised', 'karma-sourcemap-loader'],
+    plugins: [ 'karma-chrome-launcher', 'karma-firefox-launcher'],
     preprocessors: {
       './index.js': ['webpack', 'sourcemap']
     },
