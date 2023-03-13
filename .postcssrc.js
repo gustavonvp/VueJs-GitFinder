@@ -1,7 +1,7 @@
 // https://github.com/michael-ciniawsky/postcss-load-config
 
 module.exports = {
-  "parser": "sugarss",
+  "parser": "babel",
   "map": false,
   "plugins": {
     "postcss-import": {},
