@@ -7,7 +7,11 @@ module.exports = {
   src_folders: ['test/e2e/specs'],
   output_folder: 'test/e2e/reports',
   custom_assertions_path: ['test/e2e/custom-assertions'],
-  browsers: ['chrome', 'firefox'],
+  browsers: [
+    'C:\Users\gusta\OneDrive\Documentos\GitHub\VueJs-GitFinder\node_modules\karma-chrome-launcher\examples\simple\karma.conf.js', 
+    'C:\Users\gusta\OneDrive\Documentos\GitHub\VueJs-GitFinder\node_modules\karma-firefox-launcher\index.js'
+  
+  ],
   
   selenium: {
     start_process: true,
