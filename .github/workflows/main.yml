@@ -23,7 +23,6 @@ jobs:
       - run: npm run clean
       - run: npm install --legacy-peer-deps  && ls | grep package-lock
       - run: npm run reinstall --force --legacy-peer-deps
-      - run: npm-shrinkwrap.json
       - run: npm ci --install-strategy=nested --force
       
       # only makes sense to check code format on 1 OS
