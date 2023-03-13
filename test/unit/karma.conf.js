@@ -17,18 +17,6 @@ module.exports = function karmaConfig (config) {
     // 2. add it to the `browsers` array below.
     browsers: ['Chrome', 'Firefox'],
     frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
-    plugins: [
-      'karma',
-      'karma-chrome-launcher',
-      'karma-coverage',
-      'karma-phantomjs-launcher',
-      'karma-chrome-launcher',
-      'karma-mocha',
-      'karma-phantomjs-shim',
-      'karma-sinon-chai',
-      'sinon-chai',
-      'chai'
-  ],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
