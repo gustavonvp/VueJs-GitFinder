@@ -29,7 +29,8 @@ module.exports = function karmaConfig (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['spec', 'coverage'],
+    //reporters: ['spec', 'coverage'],
+    reporters: ['progress', 'kjhtml'],
     files: ['./index.js'],
     // preprocessors: {
     //   './index.js': ['webpack', 'sourcemap']
