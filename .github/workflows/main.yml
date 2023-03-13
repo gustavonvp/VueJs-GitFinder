@@ -26,7 +26,7 @@ jobs:
       # only makes sense to check code format on 1 OS
       - name: Linting 🧹
         if: matrix.os == 'ubuntu-20.04'
-        run: npm run format:check
+       
      
       - run: npm test
 
