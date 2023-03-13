@@ -17,7 +17,8 @@ module.exports = function karmaConfig (config) {
       require('karma-chrome-launcher'),
       require('karma-firefox-launcher'),
   ],
-    frameworks: ['mocha', 'sinon-chai', 'phantomjs-shim'],
+    frameworks: ['mocha', 'chai-as-promised', 'sinon-chai', "chai"],
+    plugins: ['karma-chai-as-promised'],
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     preprocessors: {
