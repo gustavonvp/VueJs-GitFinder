@@ -15,6 +15,7 @@ module.exports = function karmaConfig (config) {
     // 2. add it to the `browsers` array below.
     //browsers: ['ChromeHeadless', 'Firefox'],
     frameworks: ['jasmine'],
+    browsers: ['C:/Program Files/Google/Chrome/Application/chrome.exe'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
@@ -46,7 +47,7 @@ module.exports = function karmaConfig (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: [process.env.CHROME_BIN],
+    //browsers: [process.env.CHROME_BIN],
     customLaunchers: {
         ChromeHeadlessNoSandbox: {
             base: 'ChromeHeadless',
