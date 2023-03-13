@@ -7,6 +7,7 @@ process.env.CHROME_BIN = require('puppeteer').executablePath()
 var webpackConfig = require('../../build/webpack.test.conf')
 
 module.exports = function karmaConfig (config) {
+  
   config.set({
     // to run in additional browsers:
     // 1. install corresponding karma launcher
@@ -21,11 +22,25 @@ module.exports = function karmaConfig (config) {
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
+    coverageReporter: {
+      dir: './coverage',
+      reporters: [
+        { type: 'lcov', subdir: '.' },
+        { type: 'text-summary' }
+      ]
+    },
     reporters: ['spec', 'coverage'],
     files: ['./index.js'],
     // preprocessors: {
     //   './index.js': ['webpack', 'sourcemap']
     // },
+    
+    singleRun: false,
+    restartOnFileChange: true,
+    webpack: webpackConfig,
+    webpackMiddleware: {
+    noInfo: true
+    },
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -41,20 +56,14 @@ module.exports = function karmaConfig (config) {
                 "--disable-gpu",
                 "--remote-debugging-port=9222"
             ]
-        },
-        singleRun: false,
-        restartOnFileChange: true,
-        webpack: webpackConfig,
-        webpackMiddleware: {
-      noInfo: true
+        }
     },
-    coverageReporter: {
-      dir: './coverage',
-      reporters: [
-        { type: 'lcov', subdir: '.' },
-        { type: 'text-summary' }
-      ]
-    },
+  });
+};
+
+
+
+
   
-  })
-}
+  
+
