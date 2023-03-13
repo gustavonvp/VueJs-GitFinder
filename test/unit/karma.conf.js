@@ -13,22 +13,15 @@ module.exports = function karmaConfig (config) {
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
     browsers: ['ChromeHeadless', 'Firefox'],
-    plugins: [
-        'karma-chrome-launcher',
-    ],
     frameworks: ['mocha'],
     reporters: ['spec', 'coverage'],
-    files: [
-      // all files ending in ".test.js"
-      // !!! use watched: false as we use webpacks watch
-      { pattern: 'test/**/*.test.js', watched: false }
-    ],
-
+    files: ['./index.js'],
+    plugins: [ 'karma-webpack',
+    'karma-mocha','karma-chai-as-promised', 'karma-sourcemap-loader'],
     preprocessors: {
-      // add webpack as preprocessor
-      'test/**/*.test.js': [ 'webpack' ]
+      './index.js': ['webpack', 'sourcemap']
     },
-    k: webpackConfig,
+    webpack: webpackConfig,
     webpackMiddleware: {
       noInfo: true
     },
