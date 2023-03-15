@@ -22,6 +22,7 @@ module.exports = function karmaConfig (config) {
       require('karma-script-launcher'),
       require('karma-phantomjs-launcher')
     ],
+    
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
@@ -32,14 +33,15 @@ module.exports = function karmaConfig (config) {
         { type: 'text-summary' }
       ]
     },
-    //reporters: ['spec', 'coverage'],
+    reporters: ['mocha'],
     reporters: ['progress'],
     files: ['./index.js'],
-    // preprocessors: {
-    //   './index.js': ['webpack', 'sourcemap']
-    // },
+     preprocessors: {
+      './index.js': ['karma-script-launcher']
+     },
     
     singleRun: false,
+    concurrency: Infinity,
     restartOnFileChange: true,
     webpack: webpackConfig,
     webpackMiddleware: {
@@ -52,11 +54,6 @@ module.exports = function karmaConfig (config) {
     browsers: ['PhantomJS'],
       // If browser does not capture in given timeout [ms], kill it
       captureTimeout : 60000,
-
-
-      // Continuous Integration mode
-      // if true, it capture browsers, run tests and exit
-      singleRun : true,
     customLaunchers: {
         ChromeHeadlessNoSandbox: {
             base: 'ChromeHeadless',
