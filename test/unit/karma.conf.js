@@ -33,13 +33,19 @@ module.exports = function karmaConfig (config) {
         { type: 'text-summary' }
       ]
     },
-    reporters: ['mocha'],
+    // preprocess matching files before serving them to the browser
+    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+    preprocessors: {
+      'test/**/*.js': ['browserify']
+    },
+
+
+    // test results reporter to use
+    // possible values: 'dots', 'progress'
+    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress'],
     files: ['./index.js'],
-     preprocessors: {
-      './my.conf.js': ['jasmine']
-     },
-    
+  
     singleRun: false,
     concurrency: Infinity,
     restartOnFileChange: true,
