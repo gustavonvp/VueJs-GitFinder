@@ -1,3 +1,16 @@
+name: Main
+
+on:
+  pull_request:
+   path-ignore:
+    - '**.md'
+  push:
+   branches:
+    - test_inputs
+    - releases/*
+   paths-ignore:
+    - '**.md'
+    
 jobs:
   build:
     runs-on: ubuntu-latest
