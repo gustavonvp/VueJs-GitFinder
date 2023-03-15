@@ -1,13 +1,10 @@
-name: main
-on: [push, pull_request]
-
 jobs:
-  build-and-test:
-    runs-on: ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        os: [ubuntu-20.04, windows-latest, macOS-latest]
-    name: Build and test on ${{ matrix.os }}
+        node: [ 14, 16, 18 ]
+    name: Node ${{ matrix.node }} sample
     steps:
         uses: actions/checkout@v2
         uses: actions/setup-node@v2
