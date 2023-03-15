@@ -19,8 +19,8 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
           cache: 'npm'
-      - run: npm ci --legacy-peer-deps
-      - run: npm run reinstall --legacy-peer-deps
+        - run: npm ci --legacy-peer-deps
+        - run: npm run reinstall --legacy-peer-deps
     
       # only makes sense to check code format on 1 OS
       - name: Linting 🧹
