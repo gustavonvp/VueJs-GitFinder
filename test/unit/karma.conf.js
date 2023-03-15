@@ -37,7 +37,7 @@ module.exports = function karmaConfig (config) {
     reporters: ['progress'],
     files: ['./index.js'],
      preprocessors: {
-      './index.js': ['karma-jasmine']
+      './index.js': ['phantomjs-prebuilt']
      },
     
     singleRun: false,
