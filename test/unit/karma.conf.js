@@ -9,6 +9,10 @@ var webpackConfig = require('../../build/webpack.test.conf')
 module.exports = function karmaConfig (config) {
   
   config.set({
+    // files: [
+    //   'src/**/*.js',
+    //   'test/**/*.js'
+    // ],
     // to run in additional browsers:
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
@@ -28,24 +32,40 @@ module.exports = function karmaConfig (config) {
     },
     coverageReporter: {
       dir: './coverage',
+      instrumenterOptions: {
+        istanbul: { noCompact: true }
+      },
       reporters: [
+        { type: 'html', subdir: 'report-html' },
         { type: 'lcov', subdir: '.' },
-        { type: 'text-summary' }
+        { type: 'text-summary' },
+           // reporters supporting the `file` property, use `subdir` to directly
+        // output them in the `dir` directory
+        { type: 'cobertura', subdir: '.', file: 'cobertura.txt' },
+        { type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt' },
+        { type: 'teamcity', subdir: '.', file: 'teamcity.txt' },
+        { type: 'text', subdir: '.', file: 'text.txt' },
       ]
     },
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-      'test/**/*.js': ['browserify']
-    },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['progress', 'coverage'],
     files: ['./index.js'],
+
+    preprocessors: {
+      // source files, that you wanna generate coverage for
+      // do not include tests or libraries
+      // (these files will be instrumented by Istanbul)
+      'src/**/*.js': ['coverage']
+    },
   
+     // optionally, configure the reporter
+     coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
     singleRun: false,
     concurrency: Infinity,
     restartOnFileChange: true,
