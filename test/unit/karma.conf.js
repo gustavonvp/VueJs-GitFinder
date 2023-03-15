@@ -37,7 +37,7 @@ module.exports = function karmaConfig (config) {
     reporters: ['progress'],
     files: ['./index.js'],
      preprocessors: {
-      './index.js': ['karma-script-launcher']
+      './index.js': ['karma-jasmine']
      },
     
     singleRun: false,
