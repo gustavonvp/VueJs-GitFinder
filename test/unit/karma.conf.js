@@ -19,6 +19,7 @@ module.exports = function karmaConfig (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
+      require('karma-script-launcher')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
@@ -47,7 +48,14 @@ module.exports = function karmaConfig (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    //browsers: [process.env.CHROME_BIN],
+    browsers: ['PhantomJS'],
+      // If browser does not capture in given timeout [ms], kill it
+      captureTimeout : 60000,
+
+
+      // Continuous Integration mode
+      // if true, it capture browsers, run tests and exit
+      singleRun : true,
     customLaunchers: {
         ChromeHeadlessNoSandbox: {
             base: 'ChromeHeadless',
