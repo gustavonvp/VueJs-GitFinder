@@ -9,8 +9,8 @@ jobs:
         os: [ubuntu-20.04, windows-latest, macOS-latest]
     name: Build and test on ${{ matrix.os }}
     steps:
-        uses: actions/checkout@v3
-        uses: actions/setup-node@v3
+        uses: actions/checkout@v2
+        uses: actions/setup-node@v2
       # caching NPM dependencies
       # https://github.com/actions/cache/blob/master/examples.md#node---npm
         with:
