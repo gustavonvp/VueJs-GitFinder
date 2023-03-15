@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 14, 16, 18 ]
+        node: [ 5, 6, 7 ]
     name: Node ${{ matrix.node }} sample
     steps:
       uses: actions/checkout@v2
@@ -24,7 +24,7 @@ jobs:
       # caching NPM dependencies
       # https://github.com/actions/cache/blob/master/examples.md#node---npm
        with:
-        node-version: 7
+        node-version: ${{ matrix.node }}
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
