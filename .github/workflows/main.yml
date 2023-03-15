@@ -10,26 +10,19 @@ on:
     - releases/*
    paths-ignore:
     - '**.md'
-
+    
 jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node: [ 5, 6, 7 ]
+        node: [ 14, 16, 18 ]
     name: Node ${{ matrix.node }} sample
     steps:
-      uses: actions/checkout@v2
-      uses: actions/setup-node@v2
-      # caching NPM dependencies
-      # https://github.com/actions/cache/blob/master/examples.md#node---npm
-       with:
-        node-version: ${{ matrix.node }}
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-        cache: 'npm'
-      - run: npm ci --legacy-peer-deps
-      - run: npm run reinstall --legacy-peer-deps
+      - uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm ci
       - run: npm test
-
