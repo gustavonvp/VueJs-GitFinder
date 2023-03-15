@@ -22,6 +22,7 @@ module.exports = function karmaConfig (config) {
     browsers: ['C:/Program Files/Google/Chrome/Application/chrome.exe'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('karma-chrome-launcher'),
       require('karma-script-launcher'),
