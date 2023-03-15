@@ -22,16 +22,20 @@ module.exports = function karmaConfig (config) {
     browsers: ['C:/Program Files/Google/Chrome/Application/chrome.exe'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-coverage'),
       require('karma-chrome-launcher'),
       require('karma-script-launcher'),
-      require('karma-phantomjs-launcher')
+      require('karma-phantomjs-launcher'),
+      require('karma-webpack'),
+      
     ],
     
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageReporter: {
-      dir: './coverage',
+      
+      dir: 'build/reports/coverage',
       instrumenterOptions: {
         istanbul: { noCompact: true }
       },
@@ -52,7 +56,13 @@ module.exports = function karmaConfig (config) {
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'coverage'],
+  
     files: ['./index.js'],
+     // optionally, configure the reporter
+     coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
+    },
 
     preprocessors: {
       // source files, that you wanna generate coverage for
@@ -60,12 +70,7 @@ module.exports = function karmaConfig (config) {
       // (these files will be instrumented by Istanbul)
       'src/**/*.js': ['coverage']
     },
-  
-     // optionally, configure the reporter
-     coverageReporter: {
-      type : 'html',
-      dir : 'coverage/'
-    },
+
     singleRun: false,
     concurrency: Infinity,
     restartOnFileChange: true,
