@@ -19,7 +19,8 @@ module.exports = function karmaConfig (config) {
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
-      require('karma-script-launcher')
+      require('karma-script-launcher'),
+      require('karma-phantomjs-launcher')
     ],
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
