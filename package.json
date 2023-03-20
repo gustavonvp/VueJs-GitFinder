@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "puppeteer": "^0.13.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
@@ -59,7 +60,7 @@
     "html-webpack-plugin": "^2.30.1",
     "inject-loader": "^3.0.0",
     "karma": "^0.13.22",
-    "karma-chai":"^0.1.0",
+    "karma-chai": "^0.1.0",
     "karma-chai-as-promised": "0.1.2",
     "karma-chrome-launcher": "^0.2.3",
     "karma-coverage": "^0.2.7",
