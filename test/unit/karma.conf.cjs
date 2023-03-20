@@ -3,8 +3,8 @@
 // we are also using it with karma-webpack
 //   https://github.com/webpack/karma-webpack
 process.env.CHROME_BIN = require('puppeteer').executablePath()
-
-var webpackConfig = require('../../build/webpack.test.conf')
+process.env.PHATOMJS_BIN = require('karma-phantomjs-launcher').executablePath()
+var webpackConfig = require('../../build/webpack.test.conf.cjs')
 
 module.exports = function karmaConfig (config) {
   
@@ -22,11 +22,11 @@ module.exports = function karmaConfig (config) {
     browsers: ['C:/Program Files/Google/Chrome/Application/chrome.exe'],
     plugins: [
       require('karma-jasmine'),
+      require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('karma-chrome-launcher'),
       require('karma-script-launcher'),
-      require('karma-phantomjs-launcher'),
       require('karma-webpack'),
       
     ],
@@ -83,18 +83,20 @@ module.exports = function karmaConfig (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
       // If browser does not capture in given timeout [ms], kill it
       captureTimeout : 60000,
     customLaunchers: {
         ChromeHeadlessNoSandbox: {
-            base: 'ChromeHeadless',
+            base: 'Chrome',
+            platform: 'windows',
             flags: [
                 "--no-sandbox",
                  // required to run without privileges in Docker
                 "--disable-web-security",
                 "--disable-gpu",
-                "--remote-debugging-port=9222"
+                "--remote-debugging-port=9222",
+                "--disable-web-security",
             ]
         }
     },
