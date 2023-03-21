@@ -104,7 +104,8 @@
     "webpack-cli": "3.3.12",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "@types/minimatch": "3.0.3"
     
 
   },
