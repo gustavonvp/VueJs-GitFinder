@@ -21,6 +21,7 @@
     "build": "webpack --config build\\webpack.prod.conf.cjs"
   },
   "dependencies": {
+    "@types/cors": "^2.8.13",
     "axios": "^0.21.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
