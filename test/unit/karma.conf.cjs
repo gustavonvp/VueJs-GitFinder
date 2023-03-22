@@ -3,11 +3,13 @@
 // we are also using it with karma-webpack
 //   https://github.com/webpack/karma-webpack
 process.env.CHROME_BIN = require('puppeteer').executablePath()
-process.env.PHATOMJS_BIN = require('karma-phantomjs-launcher').executablePath()
+//const { path } = require('karma-phantomjs-launcher');
+//process.env.PHATOMJS_BIN = require('karma-phantomjs-launcher').executablePath()
 var webpackConfig = require('../../build/webpack.test.conf.cjs')
 
 module.exports = function karmaConfig (config) {
-  
+
+
   config.set({
     // files: [
     //   'src/**/*.js',
@@ -19,7 +21,7 @@ module.exports = function karmaConfig (config) {
     // 2. add it to the `browsers` array below.
     //browsers: ['ChromeHeadless', 'Firefox'],
     frameworks: ['jasmine'],
-    browsers: ['C:/Program Files/Google/Chrome/Application/chrome.exe'],
+    browsers: ['ChromeHeadless',],
     plugins: [
       require('karma-jasmine'),
       require('karma-phantomjs-launcher'),
@@ -30,26 +32,28 @@ module.exports = function karmaConfig (config) {
       require('karma-webpack'),
       
     ],
-    
+    test: /\.js$/,
+   // include: path.resolve('./src/'),
+    loader: 'istanbul-instrumenter-loader',
     client: {
       clearContext: false // leave Jasmine Spec Runner output visible in browser
     },
     coverageReporter: {
       
-      dir: 'build/reports/coverage',
+      dir: 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\coverage',
       instrumenterOptions: {
         istanbul: { noCompact: true }
       },
       reporters: [
-        { type: 'html', subdir: 'report-html' },
-        { type: 'lcov', subdir: '.' },
+        { type: 'html', subdir: 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\report-html' },
+        { type: 'lcov', subdir: 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\' },
         { type: 'text-summary' },
            // reporters supporting the `file` property, use `subdir` to directly
         // output them in the `dir` directory
-        { type: 'cobertura', subdir: '.', file: 'cobertura.txt' },
-        { type: 'lcovonly', subdir: '.', file: 'report-lcovonly.txt' },
-        { type: 'teamcity', subdir: '.', file: 'teamcity.txt' },
-        { type: 'text', subdir: '.', file: 'text.txt' },
+        { type: 'coverage', subdir: 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\', file: 'cobertura.txt' },
+        { type: 'lcovonly', subdir: 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\', file: 'report-lcovonly.txt' },
+        { type: 'teamcity', subdir: 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\', file: 'teamcity.txt' },
+        { type: 'text', subdir: 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\', file: 'text.txt' },
       ]
     },
 
@@ -58,11 +62,11 @@ module.exports = function karmaConfig (config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'coverage'],
   
-    files: ['./index.js'],
+    files: ['C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\test\\unit\\index.js'],
      // optionally, configure the reporter
      coverageReporter: {
       type : 'html',
-      dir : 'coverage/'
+      dir : 'C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\build\\reports\\coverage\\'
     },
 
     preprocessors: {
@@ -72,7 +76,7 @@ module.exports = function karmaConfig (config) {
       'src/**/*.js': ['coverage']
     },
 
-    singleRun: false,
+    singleRun: true,
     concurrency: Infinity,
     restartOnFileChange: true,
     webpack: webpackConfig,
@@ -83,9 +87,9 @@ module.exports = function karmaConfig (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    //browsers: ['Chrome'],
       // If browser does not capture in given timeout [ms], kill it
-      captureTimeout : 60000,
+    captureTimeout : 160000,
     customLaunchers: {
         ChromeHeadlessNoSandbox: {
             base: 'Chrome',
