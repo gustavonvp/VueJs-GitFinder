@@ -5,6 +5,7 @@ const { utils } = require('karma-mocha');
 
 
 module.exports = (env) => ({
+  devtool: 'inline-source-map',
   target: false,
   plugins: [
     DefinePlugin(env)
