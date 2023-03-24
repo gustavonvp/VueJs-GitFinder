@@ -5,7 +5,7 @@
 process.env.CHROME_BIN = require('puppeteer').executablePath()
 //const { path } = require('karma-phantomjs-launcher');
 //process.env.PHATOMJS_BIN = require('karma-phantomjs-launcher').executablePath()
-var webpackConfig = require('../../build/webpack.test.conf.cjs')
+var webpackConfig = require('../../build/webpack.test.conf.js')
 
 module.exports = function karmaConfig (config) {
 
@@ -20,16 +20,18 @@ module.exports = function karmaConfig (config) {
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
     //browsers: ['ChromeHeadless', 'Firefox'],
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'mocha'],
     browsers: ['ChromeHeadless',],
     plugins: [
       require('karma-jasmine'),
+      require('karma-webpack'),
+      require('karma-mocha'),
+      require('karma-sourcemap-loader'),
       require('karma-phantomjs-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage'),
       require('karma-chrome-launcher'),
       require('karma-script-launcher'),
-      require('karma-webpack'),
       
     ],
     test: /\.js$/,
@@ -62,7 +64,11 @@ module.exports = function karmaConfig (config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'coverage'],
   
-    files: ['C:\\Users\\gusta\\OneDrive\\Documentos\\GitHub\\VueJs-GitFinder\\test\\unit\\index.js'],
+    files: {
+    
+    pattern: 'test/**/*.test.js', watched: false,
+    },
+    
      // optionally, configure the reporter
      coverageReporter: {
       type : 'html',
@@ -73,7 +79,9 @@ module.exports = function karmaConfig (config) {
       // source files, that you wanna generate coverage for
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
-      'src/**/*.js': ['coverage']
+      //'src/**/*.js': ['webpack'],
+      './index.js': ['coverage'],
+      'test/**/*.test.js': ['sourcemap'],
     },
 
     singleRun: true,
@@ -90,6 +98,9 @@ module.exports = function karmaConfig (config) {
     //browsers: ['Chrome'],
       // If browser does not capture in given timeout [ms], kill it
     captureTimeout : 160000,
+    browserDisconnectTolerance: 0,
+    captureConsole: true,
+    crossOriginAttribute:true,
     customLaunchers: {
         ChromeHeadlessNoSandbox: {
             base: 'Chrome',

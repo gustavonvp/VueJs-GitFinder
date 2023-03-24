@@ -1,0 +1,12 @@
+{
+    "requires": [
+        "core.js:core",
+        "../components/jquery/jquery.min.js:jquery",
+        "lodash",
+        "q"
+    ],
+    "ignores": [],
+    "excludes": [],
+    "entry": "core.js",
+    "bundle": "js-core.js"
+}

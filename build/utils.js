@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const config = require('../config/index.cjs')
+const config = require('../config/index.js')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const packageConfig = require('../package.json')
 
