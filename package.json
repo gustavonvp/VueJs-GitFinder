@@ -15,7 +15,7 @@
     "reinstall": "npm run clean && npm install",
     "dev1": "webpack serve --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "unit": "karma start BABEL_ENV=test test/unit/karma.conf.js --single-run",
+    "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node node_modules/@babel/preset-env test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
