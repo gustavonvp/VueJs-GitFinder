@@ -1,7 +1,7 @@
 'use strict'
 // This is the webpack config used for unit tests.
 
-const utils = require('./utils')
+const utils = require('./utils.js')
 const webpack = require('webpack')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')

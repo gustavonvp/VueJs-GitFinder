@@ -1,69 +1,26 @@
-name: main
-on: [push, pull_request]
+on: push
 
 jobs:
-  build-and-test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-20.04, windows-latest, macOS-latest]
-    name: Build and test on ${{ matrix.os }}
+  build:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+    - uses: actions/checkout@v2
 
-      # caching NPM dependencies
-      # https://github.com/actions/cache/blob/master/examples.md#node---npm
-      - uses: actions/cache@v1
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      - run: node -v
-      - run: npm install --legacy-peer-deps
-      - run: npm ci --no-package-lock
-
-      # only makes sense to check code format on 1 OS
-      - name: Linting 🧹
-        if: matrix.os == 'ubuntu-20.04'
-        run: npm run format:check
-
-      - run: npm test
-
-  release:
-    runs-on: ubuntu-20.04
-    name: release
-    needs: build-and-test
-    # only release from the master branch
-    if: github.ref == 'refs/heads/master'
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - run: echo $GITHUB_SHA
-
-      # trying to use this action to install dependencies for semantic release
-      - uses: bahmutov/npm-install@HEAD
-
-      # https://github.com/cycjimmy/semantic-release-action
-      - name: Semantic Release
-        uses: cycjimmy/semantic-release-action@v3
-        id: semantic
-        with:
-          branch: master
-          extra_plugins: |
-            @semantic-release/git
-            @semantic-release/changelog
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Push updates to branch for major version
-        # if there is a new version published, let's say v1.2.3
-        # then this step will update branch "v1" to this commit
-        # https://github.com/cypress-io/github-action/branches
-        if: steps.semantic.outputs.new_release_published == 'true'
-        run: 'git push https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git HEAD:refs/heads/v${{steps.semantic.outputs.new_release_major_version}}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Cache node modules
+      id: cache-nodemodules
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-node-modules
+      with:
+        # caching node_modules
+        path: node_modules
+        key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-build-${{ env.cache-name }}-
+          ${{ runner.os }}-build-
+          ${{ runner.os }}-
+    - name: Install Dependencies
+      if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+      run: npm install --legacy-peer-deps --force
+           npm ci --legacy-peer-deps

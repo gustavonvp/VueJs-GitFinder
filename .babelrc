@@ -1,7 +1,17 @@
 {
   "presets": [
+    ["@babel/preset-es2015"],
+    
+    [
+      "@babel/preset-env",
+      {
+        "useBuiltIns": "entry",
+        "corejs": "3.22"
+      }
+    ],
+    
     ["env", {
-      "modules": false,
+      "modules": true,
       "targets": {
         "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
       }
@@ -14,5 +24,12 @@
       "presets": ["env", "stage-2"],
       "plugins": ["transform-vue-jsx", "istanbul"]
     }
+  },
+  "babel": {
+    "babelrc": true,
+    "presets": [
+      ["es2015"],
+      "stage-1"
+   ]
   }
 }
