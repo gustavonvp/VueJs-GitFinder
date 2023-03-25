@@ -43,13 +43,11 @@ jobs:
         browser: firefox
         version: latest
     - name: Install Requirements
-      working-directory: vuejs-gitfinder/src/**
+      working-directory: 
       run: npm install
     - name: Run tests
       uses: nick-invision/retry@v2.8.3
       with:
         timeout_minutes: 20
         max_attempts: 3
-        command: |
-          cd  vuejs-gitfinder/src/**
-          npm test
+        command: npm test
