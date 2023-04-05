@@ -21,7 +21,7 @@ env:
   GH_TOKEN: ${{ secrets.SELENIUM_CI_TOKEN }}
 
 jobs:
-  test_examples:
+  runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
