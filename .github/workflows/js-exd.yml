@@ -21,7 +21,9 @@ env:
   GH_TOKEN: ${{ secrets.SELENIUM_CI_TOKEN }}
 
 jobs:
-  master:
+  # ~~~~~~~~~~~~~~~~~~ Cypress v9 and below (using Legacy configuration) ~~~~~~~~~~~~~~~~~~~ #
+ my_first_job:
+    name: My first job
     strategy:
       fail-fast: false
       matrix:
