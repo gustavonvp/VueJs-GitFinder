@@ -6,12 +6,12 @@ on:
     - cron: '40 22 * * *'
   pull_request:
     branches:
-      - test_inputs
+      - master
     paths:
       - 'vuejs-gitfinder/src/**'
   push:
     branches:
-      - test_inputs
+      - master
     paths:
       - 'vuejs-gitfinder/src/**'
 
@@ -21,7 +21,7 @@ env:
   GH_TOKEN: ${{ secrets.SELENIUM_CI_TOKEN }}
 
 jobs:
-  test_examples:
+  master:
     strategy:
       fail-fast: false
       matrix:
