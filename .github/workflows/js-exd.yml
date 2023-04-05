@@ -21,13 +21,7 @@ env:
   GH_TOKEN: ${{ secrets.SELENIUM_CI_TOKEN }}
 
 jobs:
-<<<<<<< HEAD
-  runs-on: ubuntu-latest
-=======
-  # ~~~~~~~~~~~~~~~~~~ Cypress v9 and below (using Legacy configuration) ~~~~~~~~~~~~~~~~~~~ #
- my_first_job:
-    name: My first job
->>>>>>> b9802490376b7cb85639f726b5043ad80f88ad29
+
     strategy:
       fail-fast: false
       matrix:
