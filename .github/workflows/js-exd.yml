@@ -40,7 +40,9 @@ jobs:
         version: latest
     - name: Install Requirements
       working-directory: 
-      run: npm install --legacy-peer-deps --force
+      run: rm -Rf node_modules
+      run: npm install
+      run: npm watch
     - name: Run tests
       uses: nick-invision/retry@v2.8.3
       with:
