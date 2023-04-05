@@ -21,11 +21,6 @@ env:
   GH_TOKEN: ${{ secrets.SELENIUM_CI_TOKEN }}
 
 jobs:
-
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ ubuntu-latest, windows-latest, macos-latest ]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout GitHub repo
