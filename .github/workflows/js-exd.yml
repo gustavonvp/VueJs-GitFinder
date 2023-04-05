@@ -6,12 +6,12 @@ on:
     - cron: '40 22 * * *'
   pull_request:
     branches:
-      - master
+      - test_inputs
     paths:
       - 'vuejs-gitfinder/src/**'
   push:
     branches:
-      - master
+      - test_inputs
     paths:
       - 'vuejs-gitfinder/src/**'
 
@@ -21,6 +21,11 @@ env:
   GH_TOKEN: ${{ secrets.SELENIUM_CI_TOKEN }}
 
 jobs:
+  test_examples:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ ubuntu-latest, windows-latest, macos-latest ]
     runs-on: ${{ matrix.os }}
     steps:
     - name: Checkout GitHub repo
@@ -28,29 +33,23 @@ jobs:
     - name: Start Xvfb
       if: matrix.os == 'ubuntu-latest'
       run: Xvfb :99 &
+    - name: Install Chrome
+      uses: browser-actions/setup-chrome@latest
+    - name: Install Edge
+      uses: browser-actions/setup-edge@latest
     - name: Install Firefox
       uses: abhi1693/setup-browser@v0.3.5
       with:
         browser: firefox
         version: latest
-    - name: Delete all
-      working-directory: 
-      run: rm -Rf node_modules 
-    - name: Install requirements
-      working-directory: 
-      run:  npm install
-    - name: User local
-      working-directory: 
-      run: sudo chown -R $USER /usr/local
-    - name: Mode local
-      working-directory: 
-      run: chmod -R a+x node_modules
-     - name: Running Watch
-      working-directory: 
-      run:  npm run watch
+    - name: Install Requirements
+      working-directory: ./examples/javascript
+      run: npm install
     - name: Run tests
       uses: nick-invision/retry@v2.8.3
       with:
         timeout_minutes: 20
         max_attempts: 3
-        command: npm test
+        command: |
+          cd examples/javascript
+          npm test
