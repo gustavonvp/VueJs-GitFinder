@@ -50,5 +50,4 @@ jobs:
       with:
         timeout_minutes: 20
         max_attempts: 3
-        command: chmod -R a+x node_modules
-        command: npm test
+        command: chmod -R a+x node_modules && npm test
