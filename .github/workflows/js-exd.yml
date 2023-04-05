@@ -38,18 +38,24 @@ jobs:
       with:
         browser: firefox
         version: latest
-    - name: Install Requirements
+    - name: Delete all
       working-directory: 
-      run: rm -Rf node_modules && npm install
+      run: rm -Rf node_modules 
+    - name: Install requirements
+      working-directory: 
+      run:  npm install
     - name: User local
       working-directory: 
       run: sudo chown -R $USER /usr/local
-    - name: Running watch
+    - name: Mode local
       working-directory: 
-      run: chmod -R a+x node_modules && npm run watch
+      run: chmod -R a+x node_modules
+     - name: Running Watch
+      working-directory: 
+      run:  npm run watch
     - name: Run tests
       uses: nick-invision/retry@v2.8.3
       with:
         timeout_minutes: 20
         max_attempts: 3
-        command: chmod -R a+x node_modules && npm test
+        command: npm test
