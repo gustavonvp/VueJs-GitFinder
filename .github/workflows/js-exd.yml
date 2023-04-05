@@ -40,9 +40,13 @@ jobs:
         version: latest
     - name: Install Requirements
       working-directory: 
-      run: rm -Rf node_modules
-      run: npm install
-      run: npm watch
+      run: rm -Rf node_modules && npm install
+    - name: User local
+      working-directory: 
+      run: sudo chown -R $USER /usr/local
+    - name: Running watch
+      working-directory: 
+      run: chmod -R a+x node_modules && npm run watch
     - name: Run tests
       uses: nick-invision/retry@v2.8.3
       with:
