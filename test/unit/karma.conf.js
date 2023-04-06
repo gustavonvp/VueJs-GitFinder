@@ -10,8 +10,8 @@ module.exports = function karmaConfig (config) {
   
   config.set({
     files: [
-      'src/**/*.js',
-      'test/**/*.js'
+      'coverage/**/*.html',
+      'specs/**/*.js'
     ],
     // to run in additional browsers:
     // 1. install corresponding karma launcher
@@ -58,7 +58,7 @@ module.exports = function karmaConfig (config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'coverage'],
   
-    files: ['./index.js'],
+    files: ['../../index.html'],
      // optionally, configure the reporter
      coverageReporter: {
       type : 'html',
