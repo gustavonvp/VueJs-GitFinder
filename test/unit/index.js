@@ -1,4 +1,4 @@
-// import Vue from 'vue'; 
+// import {config} from 'vue'; 
 
 // config.productionTip = false
 
@@ -12,8 +12,31 @@
 // const srcContext = require.context('../../src', true, /^\.\/(?!main(\.js)?$)/)
 // srcContext.keys().forEach(srcContext)
 
-const afterTwoSeconds = require('./src/main');
+// const afterTwoSeconds = require('./src/main');
 
-afterTwoSeconds(() => {
-  console.log('I will be called after 2 seconds.');
+// afterTwoSeconds(() => {
+//   console.log('I will be called after 2 seconds.');
+// });
+
+function helloWorld() {
+  return "Hello World!";
+}
+describe('helloWorld', () => {
+
+  let expected = "";
+
+  beforeEach(() => {
+    expected = "Hello World!";
+  });
+
+  afterEach(() => {
+    expected = "Hello World!";
+  });
+
+  it('helloWorld', () => {
+    expect(helloWorld())
+        .toEqual(expected);
+  });
+
 });
+

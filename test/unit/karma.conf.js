@@ -58,7 +58,7 @@ module.exports = function karmaConfig (config) {
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
     reporters: ['progress', 'coverage'],
   
-    files: ['../../index.html'],
+    files: ['index.js'],
      // optionally, configure the reporter
      coverageReporter: {
       type : 'html',
