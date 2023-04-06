@@ -46,7 +46,7 @@ jobs:
       working-directory: 
       run: |
         rm -Rf node_modules 
-        npm install
+        npm install --legacy-peer-deps
         sudo chown -R $USER /usr/local
         chmod -R a+x node_modules
         npm run watch
