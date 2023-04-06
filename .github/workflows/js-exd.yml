@@ -45,10 +45,10 @@ jobs:
     - name: Delete all
       working-directory: 
       run: |
-        rm  node_modules/** 
+        rm  /node_modules/
         npm install --legacy-peer-deps --force
         npm i inspect-function
         sudo chown -R $USER /usr/local
-        chmod -R a+x node_modules/**
+        chmod -R a+x /node_modules/
         npm test
    
