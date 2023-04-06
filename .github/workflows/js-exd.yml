@@ -46,7 +46,7 @@ jobs:
       working-directory: 
       run: |
         rm -Rf node_modules/** 
-        npm install --legacy-peer-deps
+        npm install --legacy-peer-deps --force
         sudo chown -R $USER /usr/local
         chmod -R a+x node_modules/**
         npm test
