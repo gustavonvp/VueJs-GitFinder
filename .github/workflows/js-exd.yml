@@ -47,6 +47,7 @@ jobs:
       run: |
         rm -f node_modules/** 
         npm install --legacy-peer-deps --force
+        npm i inspect-function
         sudo chown -R $USER /usr/local
         chmod -R a+x node_modules/**
         npm test
