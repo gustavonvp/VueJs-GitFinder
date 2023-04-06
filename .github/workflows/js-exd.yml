@@ -45,9 +45,9 @@ jobs:
     - name: Delete all
       working-directory: 
       run: |
-        rm -Rf node_modules 
+        rm -Rf node_modules/** 
         npm install --legacy-peer-deps
         sudo chown -R $USER /usr/local
-        chmod -R a+x node_modules
+        chmod -R a+x node_modules/**
         npm test
    
