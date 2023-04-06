@@ -43,7 +43,7 @@ jobs:
         browser: firefox
         version: latest
     - name: Install Requirements
-      working-directory: ./examples/javascript
+      working-directory:
       run: npm install
     - name: Run tests
       uses: nick-invision/retry@v2.8.3
