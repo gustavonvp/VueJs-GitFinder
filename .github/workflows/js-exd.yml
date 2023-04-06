@@ -46,18 +46,9 @@ jobs:
       working-directory: 
       run: |
         rm  -rf node_modules
-        |
-
         npm install --force
-        |
-        
         npm i inspect-function
-        |
-        
         sudo chown -R $USER /usr/local
-        |
         chmod -R a+x node_modules
-        |
-        
         npm test
    

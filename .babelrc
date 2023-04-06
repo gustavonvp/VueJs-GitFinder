@@ -11,8 +11,8 @@
   "plugins": ["transform-vue-jsx", "transform-runtime"],
   "env": {
     "test": {
-      "presets": ["env", "stage-2"],
-      "plugins": ["transform-vue-jsx", "istanbul"]
+      "presets": ["es2015", "env", "stage-2"],
+      "plugins": ["transform-vue-jsx", "istanbul", "transform-es2015-arrow-functions", "transform-async-to-generator"]
     }
   }
 }

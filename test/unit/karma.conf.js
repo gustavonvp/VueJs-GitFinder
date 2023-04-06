@@ -9,17 +9,17 @@ var webpackConfig = require('../../build/webpack.test.conf')
 module.exports = function karmaConfig (config) {
   
   config.set({
-    // files: [
-    //   'src/**/*.js',
-    //   'test/**/*.js'
-    // ],
+    files: [
+      'src/**/*.js',
+      'test/**/*.js'
+    ],
     // to run in additional browsers:
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
     //browsers: ['ChromeHeadless', 'Firefox'],
     frameworks: ['jasmine'],
-    browsers: ['C:/Program Files/Google/Chrome/Application/chrome.exe'],
+    //browsers: ['chrome'],
     plugins: [
       require('karma-jasmine'),
       require('karma-jasmine-html-reporter'),
@@ -70,7 +70,16 @@ module.exports = function karmaConfig (config) {
       // do not include tests or libraries
       // (these files will be instrumented by Istanbul)
       'src/**/*.js': ['coverage']
+      //'src/**/*.js': ['babel'],
+     // 'tests/**/*.spec.js': ['babel'],
     },
+
+    
+    babelPreprocessor: {
+      options: {
+          "presets": ["es2015"]
+      }
+   },
 
     singleRun: false,
     concurrency: Infinity,
@@ -83,7 +92,7 @@ module.exports = function karmaConfig (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['PhantomJS'],
+    browsers: ['Chrome'],
       // If browser does not capture in given timeout [ms], kill it
       captureTimeout : 60000,
     customLaunchers: {
